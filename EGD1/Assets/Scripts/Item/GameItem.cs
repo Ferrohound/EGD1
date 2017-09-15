@@ -7,9 +7,11 @@ using UnityEngine;
 public class GameItem : MonoBehaviour, Interactable {
 	
 	Rigidbody rb;
-	bool held = false;
+	public bool held = false;
 	bool initialized = false;
     private List<Collider> cols;
+	public Transform target = null;
+	public float fusionSpeed = 3f;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,15 @@ public class GameItem : MonoBehaviour, Interactable {
 		rb = GetComponent<Rigidbody>();
 		cols = new List<Collider>(GetComponents<Collider>());
 		initialized = true;
+	}
+	
+	void Update()
+	{
+		if(target!=null)
+		{
+			float step = fusionSpeed * Time.deltaTime;
+			transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+		}
 	}
 	
 	// Interact
@@ -66,6 +77,41 @@ public class GameItem : MonoBehaviour, Interactable {
 				held = true; 
 				
 			break;
+			
+			//combining
+			case 3:
+				if(pc.left == transform)
+				{
+					target = pc.right;
+				}
+				else
+				{
+					target = pc.left;
+				}
+				transform.SetParent(null);
+			break;
 		}
+	}
+	
+	void OnTriggerEnter(Collider col)
+	{
+		//if they're both held, set one as the parent (if its parent is null i guess)
+		//and negate the child's rigidbody
+		GameItem other = col.GetComponent<GameItem>();
+		if ( other == null || !other.held )
+			return;
+		
+		if(transform.parent == null)
+		{
+			transform.SetParent(other.transform);
+			rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY
+				| RigidbodyConstraints.FreezePositionZ;
+			held = false;
+		}
+		
+		//probably stop it from being grabbable? idk
+		
+		target = null;
+		
 	}
 }

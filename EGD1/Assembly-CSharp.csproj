@@ -51,6 +51,10 @@
      <Compile Include="Assets\Scripts\Item\Interactible.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+     <None Include="Assets\Shaders\Wobble.shader" />
+     <None Include="Assets\Shaders\celShade_v4.shader" />
+     <None Include="Assets\Shaders\Whitenoise.shader" />
+     <None Include="Assets\Shaders\STDCharacterShader.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

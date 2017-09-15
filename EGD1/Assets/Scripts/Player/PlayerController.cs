@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour {
 	public Transform leftT, rightT, left, right;
 	
 	//bool if both hands are in use
-	public bool bothHands; 
+	public bool bothHands = false;
+	public bool combining = false;
 	
 	//camera transform
 	public Transform cam;
@@ -21,8 +22,9 @@ public class PlayerController : MonoBehaviour {
 	
 	//variables for holding items
 	RaycastHit rhit;
-	bool fDown;
-    bool f2Down;
+	bool fDown, f2Down, fUp, f2Up, action;
+	bool negateLeft = false;
+	bool negateRight = false;
 	
 	public Collider col;
 	
@@ -60,6 +62,16 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+		if(combining && ( left.parent != leftT || right.parent != rightT))
+		{
+			if(left.parent!=leftT)
+				left = null;
+			else
+				right = null;
+			Debug.Log("Not combining right now!");
+			combining = false;
+		}
+		
 		//update the y value of the hand transform's positions=======================
 		Vector3 f = cam.forward;
 		Vector3 up = cam.up;
@@ -75,14 +87,26 @@ public class PlayerController : MonoBehaviour {
 		//picking up items ==========================================================
 		fDown = Input.GetButtonDown("Fire1");
         f2Down = Input.GetButtonDown("Fire2");
+		fUp = Input.GetButtonUp("Fire1");
+		f2Up = Input.GetButtonUp("Fire2");
+		action = Input.GetKeyDown("space");
 		
-		if (left != null && fDown) 
+		
+		if (left != null && fUp) 
 		{//Left throw is being charged
 			callFlag = 0;
         } 
-		if(right != null && f2Down) 
+		if(right != null && f2Up) 
 		{ //WILL HAVE TO CHANGE
 			callFlag = 1;
+		}
+		
+		//combine
+		if(right!=null && left!=null && action)
+		{
+			combining = true;
+			left.GetComponent<GameItem>().Interact(this, 3);
+			right.GetComponent<GameItem>().Interact(this, 3);
 		}
 		
 		//figure out whether there is an interactable in front of you
@@ -149,12 +173,16 @@ public class PlayerController : MonoBehaviour {
             default: break;
         }
 		
-		if (left != null) 
+		if (left != null && !combining) 
 		{
+			if(left.transform.parent == null)
+				left.transform.SetParent(leftT);
             left.localPosition = Vector3.zero;
         }
-        if (right != null) 
+        if (right != null && !combining) 
 		{
+			if(right.transform.parent == null)
+				right.transform.SetParent(rightT);
             right.localPosition = Vector3.zero;
         }
 	}
