@@ -1,0 +1,982 @@
+fileFormatVersion: 2
+guid: d58fb05e7149cfe40988ea6bc72c17a1
+timeCreated: 1505537634
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: animation_desk
+    100004: animation_desk 1
+    100006: animation_desk 2
+    100008: animation_desk 3
+    100010: arm1
+    100012: arm1 1
+    100014: arm1 2
+    100016: arm1 3
+    100018: arm1_joint
+    100020: arm1_joint 1
+    100022: arm1_joint 2
+    100024: arm1_joint 3
+    100026: arm1_support1
+    100028: arm1_support1 1
+    100030: arm1_support1 2
+    100032: arm1_support1 3
+    100034: arm1_support2
+    100036: arm1_support2 1
+    100038: arm1_support2 2
+    100040: arm1_support2 3
+    100042: arm2
+    100044: arm2 1
+    100046: arm2 2
+    100048: arm2 3
+    100050: arm2_joint
+    100052: arm2_joint 1
+    100054: arm2_joint 2
+    100056: arm2_joint 3
+    100058: arm2_supports
+    100060: arm2_supports 1
+    100062: arm2_supports 2
+    100064: arm2_supports 3
+    100066: black_ring
+    100068: blue_cushion
+    100070: cabinet
+    100072: cabinet 1
+    100074: cabinet 2
+    100076: cabinet 3
+    100078: chair1
+    100080: chair2
+    100082: chair3
+    100084: chair4
+    100086: chair5
+    100088: chair_back
+    100090: chair_back 1
+    100092: chair_back 2
+    100094: chair_back 3
+    100096: chair_back 4
+    100098: chair_frame
+    100100: chair_frame 1
+    100102: chair_frame 2
+    100104: chair_frame 3
+    100106: chair_frame 4
+    100108: chair_seat
+    100110: chair_seat 1
+    100112: chair_seat 2
+    100114: chair_seat 3
+    100116: chair_seat 4
+    100118: chair_support
+    100120: chair_support 1
+    100122: chair_support 2
+    100124: chair_support 3
+    100126: chair_support 4
+    100128: clamp_key
+    100130: clamp_key 1
+    100132: clamp_key 2
+    100134: clamp_key 3
+    100136: computer
+    100138: couch
+    100140: couch_arm
+    100142: couch_arm3
+    100144: couch_arm_support
+    100146: couch_arm_support1
+    100148: couch_base
+    100150: couch_stripe_box
+    100152: couch_stripe_box1
+    100154: couch_support1
+    100156: couch_support2
+    100158: desk1
+    100160: desk2
+    100162: desk3
+    100164: desk4
+    100166: desk_lamp_base
+    100168: desk_lamp_head
+    100170: desk_lamp_wire
+    100172: desk_lamp_wire2
+    100174: desk_lamp_wire3
+    100176: desk_surface
+    100178: desk_surface 1
+    100180: desk_surface 2
+    100182: desk_surface 3
+    100184: desk_swivel
+    100186: desk_swivel 1
+    100188: desk_swivel 2
+    100190: desk_swivel 3
+    100192: file_bucket
+    100194: file_bucket 1
+    100196: file_bucket 2
+    100198: file_bucket 3
+    100200: floor
+    100202: floor_number_logo
+    100204: floor_text10
+    100206: floor_text2
+    100208: floor_text3
+    100210: floor_text4
+    100212: floor_text5
+    100214: floor_text7
+    100216: floor_text8
+    100218: floor_text9
+    100220: Floor_Text_Main
+    100222: head
+    100224: head 1
+    100226: head 2
+    100228: head 3
+    100230: keyboard
+    100232: lamp
+    100234: lamp 1
+    100236: lamp 2
+    100238: lamp 3
+    100240: lamp_clamp
+    100242: lamp_clamp 1
+    100244: lamp_clamp 2
+    100246: lamp_clamp 3
+    100248: lamp_cube
+    100250: lamp_dome
+    100252: lamp_dome 1
+    100254: lamp_dome 2
+    100256: lamp_dome 3
+    100258: lamp_joint
+    100260: lamp_joint 1
+    100262: lamp_joint 2
+    100264: lamp_joint 3
+    100266: lamp_spike_ball
+    100268: legs
+    100270: legs 1
+    100272: legs 2
+    100274: legs 3
+    100276: lightbulb
+    100278: monitor
+    100280: pipe
+    100282: pipe_rod_sculpture
+    100284: plinth1
+    100286: plinth2
+    100288: plinth3
+    100290: plinth_base
+    100292: plinth_base 1
+    100294: plinth_base 2
+    100296: plinth_surface
+    100298: plinth_surface 1
+    100300: plinth_surface 2
+    100302: pPlane3
+    100304: pyramid
+    100306: pyramid_base
+    100308: pyramid_tip
+    100310: reception
+    100312: reception_lamp
+    100314: red_cushion
+    100316: rings
+    100318: rod
+    100320: rug
+    100322: shelving1
+    100324: shelving2
+    100326: side_table
+    100328: side_table1
+    100330: table_bottom
+    100332: table_bottom 1
+    100334: table_guard1
+    100336: table_guard2
+    100338: table_leg1
+    100340: table_main
+    100342: table_support
+    100344: table_support 1
+    100346: table_support2
+    100348: table_support2 1
+    100350: table_top1
+    100352: table_top1 1
+    100354: teal_cushion
+    100356: wheel1
+    100358: wheel1 1
+    100360: wheel1 2
+    100362: wheel1 3
+    100364: wheel1 4
+    100366: wheel2
+    100368: wheel2 1
+    100370: wheel2 2
+    100372: wheel2 3
+    100374: wheel2 4
+    100376: wheel3
+    100378: wheel3 1
+    100380: wheel3 2
+    100382: wheel3 3
+    100384: wheel3 4
+    100386: wheel4
+    100388: wheel4 1
+    100390: wheel4 2
+    100392: wheel4 3
+    100394: wheel4 4
+    100396: white_ring
+    100398: window1
+    100400: window2
+    100402: window_frame
+    100404: window_frame 1
+    100406: window_supports
+    100408: window_supports 1
+    100410: window_wall1
+    100412: window_wall2
+    100414: window_wall3
+    400000: //RootNode
+    400002: animation_desk
+    400004: animation_desk 1
+    400006: animation_desk 2
+    400008: animation_desk 3
+    400010: arm1
+    400012: arm1 1
+    400014: arm1 2
+    400016: arm1 3
+    400018: arm1_joint
+    400020: arm1_joint 1
+    400022: arm1_joint 2
+    400024: arm1_joint 3
+    400026: arm1_support1
+    400028: arm1_support1 1
+    400030: arm1_support1 2
+    400032: arm1_support1 3
+    400034: arm1_support2
+    400036: arm1_support2 1
+    400038: arm1_support2 2
+    400040: arm1_support2 3
+    400042: arm2
+    400044: arm2 1
+    400046: arm2 2
+    400048: arm2 3
+    400050: arm2_joint
+    400052: arm2_joint 1
+    400054: arm2_joint 2
+    400056: arm2_joint 3
+    400058: arm2_supports
+    400060: arm2_supports 1
+    400062: arm2_supports 2
+    400064: arm2_supports 3
+    400066: black_ring
+    400068: blue_cushion
+    400070: cabinet
+    400072: cabinet 1
+    400074: cabinet 2
+    400076: cabinet 3
+    400078: chair1
+    400080: chair2
+    400082: chair3
+    400084: chair4
+    400086: chair5
+    400088: chair_back
+    400090: chair_back 1
+    400092: chair_back 2
+    400094: chair_back 3
+    400096: chair_back 4
+    400098: chair_frame
+    400100: chair_frame 1
+    400102: chair_frame 2
+    400104: chair_frame 3
+    400106: chair_frame 4
+    400108: chair_seat
+    400110: chair_seat 1
+    400112: chair_seat 2
+    400114: chair_seat 3
+    400116: chair_seat 4
+    400118: chair_support
+    400120: chair_support 1
+    400122: chair_support 2
+    400124: chair_support 3
+    400126: chair_support 4
+    400128: clamp_key
+    400130: clamp_key 1
+    400132: clamp_key 2
+    400134: clamp_key 3
+    400136: computer
+    400138: couch
+    400140: couch_arm
+    400142: couch_arm3
+    400144: couch_arm_support
+    400146: couch_arm_support1
+    400148: couch_base
+    400150: couch_stripe_box
+    400152: couch_stripe_box1
+    400154: couch_support1
+    400156: couch_support2
+    400158: desk1
+    400160: desk2
+    400162: desk3
+    400164: desk4
+    400166: desk_lamp_base
+    400168: desk_lamp_head
+    400170: desk_lamp_wire
+    400172: desk_lamp_wire2
+    400174: desk_lamp_wire3
+    400176: desk_surface
+    400178: desk_surface 1
+    400180: desk_surface 2
+    400182: desk_surface 3
+    400184: desk_swivel
+    400186: desk_swivel 1
+    400188: desk_swivel 2
+    400190: desk_swivel 3
+    400192: file_bucket
+    400194: file_bucket 1
+    400196: file_bucket 2
+    400198: file_bucket 3
+    400200: floor
+    400202: floor_number_logo
+    400204: floor_text10
+    400206: floor_text2
+    400208: floor_text3
+    400210: floor_text4
+    400212: floor_text5
+    400214: floor_text7
+    400216: floor_text8
+    400218: floor_text9
+    400220: Floor_Text_Main
+    400222: head
+    400224: head 1
+    400226: head 2
+    400228: head 3
+    400230: keyboard
+    400232: lamp
+    400234: lamp 1
+    400236: lamp 2
+    400238: lamp 3
+    400240: lamp_clamp
+    400242: lamp_clamp 1
+    400244: lamp_clamp 2
+    400246: lamp_clamp 3
+    400248: lamp_cube
+    400250: lamp_dome
+    400252: lamp_dome 1
+    400254: lamp_dome 2
+    400256: lamp_dome 3
+    400258: lamp_joint
+    400260: lamp_joint 1
+    400262: lamp_joint 2
+    400264: lamp_joint 3
+    400266: lamp_spike_ball
+    400268: legs
+    400270: legs 1
+    400272: legs 2
+    400274: legs 3
+    400276: lightbulb
+    400278: monitor
+    400280: pipe
+    400282: pipe_rod_sculpture
+    400284: plinth1
+    400286: plinth2
+    400288: plinth3
+    400290: plinth_base
+    400292: plinth_base 1
+    400294: plinth_base 2
+    400296: plinth_surface
+    400298: plinth_surface 1
+    400300: plinth_surface 2
+    400302: pPlane3
+    400304: pyramid
+    400306: pyramid_base
+    400308: pyramid_tip
+    400310: reception
+    400312: reception_lamp
+    400314: red_cushion
+    400316: rings
+    400318: rod
+    400320: rug
+    400322: shelving1
+    400324: shelving2
+    400326: side_table
+    400328: side_table1
+    400330: table_bottom
+    400332: table_bottom 1
+    400334: table_guard1
+    400336: table_guard2
+    400338: table_leg1
+    400340: table_main
+    400342: table_support
+    400344: table_support 1
+    400346: table_support2
+    400348: table_support2 1
+    400350: table_top1
+    400352: table_top1 1
+    400354: teal_cushion
+    400356: wheel1
+    400358: wheel1 1
+    400360: wheel1 2
+    400362: wheel1 3
+    400364: wheel1 4
+    400366: wheel2
+    400368: wheel2 1
+    400370: wheel2 2
+    400372: wheel2 3
+    400374: wheel2 4
+    400376: wheel3
+    400378: wheel3 1
+    400380: wheel3 2
+    400382: wheel3 3
+    400384: wheel3 4
+    400386: wheel4
+    400388: wheel4 1
+    400390: wheel4 2
+    400392: wheel4 3
+    400394: wheel4 4
+    400396: white_ring
+    400398: window1
+    400400: window2
+    400402: window_frame
+    400404: window_frame 1
+    400406: window_supports
+    400408: window_supports 1
+    400410: window_wall1
+    400412: window_wall2
+    400414: window_wall3
+    2300000: arm1_joint
+    2300002: arm1_joint 1
+    2300004: arm1_joint 2
+    2300006: arm1_joint 3
+    2300008: arm1_support1
+    2300010: arm1_support1 1
+    2300012: arm1_support1 2
+    2300014: arm1_support1 3
+    2300016: arm1_support2
+    2300018: arm1_support2 1
+    2300020: arm1_support2 2
+    2300022: arm1_support2 3
+    2300024: arm2_joint
+    2300026: arm2_joint 1
+    2300028: arm2_joint 2
+    2300030: arm2_joint 3
+    2300032: arm2_supports
+    2300034: arm2_supports 1
+    2300036: arm2_supports 2
+    2300038: arm2_supports 3
+    2300040: black_ring
+    2300042: blue_cushion
+    2300044: cabinet
+    2300046: cabinet 1
+    2300048: cabinet 2
+    2300050: cabinet 3
+    2300052: chair_back
+    2300054: chair_back 1
+    2300056: chair_back 2
+    2300058: chair_back 3
+    2300060: chair_back 4
+    2300062: chair_frame
+    2300064: chair_frame 1
+    2300066: chair_frame 2
+    2300068: chair_frame 3
+    2300070: chair_frame 4
+    2300072: chair_seat
+    2300074: chair_seat 1
+    2300076: chair_seat 2
+    2300078: chair_seat 3
+    2300080: chair_seat 4
+    2300082: chair_support
+    2300084: chair_support 1
+    2300086: chair_support 2
+    2300088: chair_support 3
+    2300090: chair_support 4
+    2300092: clamp_key
+    2300094: clamp_key 1
+    2300096: clamp_key 2
+    2300098: clamp_key 3
+    2300100: couch_arm
+    2300102: couch_arm3
+    2300104: couch_arm_support
+    2300106: couch_arm_support1
+    2300108: couch_base
+    2300110: couch_stripe_box
+    2300112: couch_stripe_box1
+    2300114: couch_support1
+    2300116: couch_support2
+    2300118: desk_lamp_base
+    2300120: desk_lamp_head
+    2300122: desk_lamp_wire
+    2300124: desk_lamp_wire2
+    2300126: desk_lamp_wire3
+    2300128: desk_surface
+    2300130: desk_surface 1
+    2300132: desk_surface 2
+    2300134: desk_surface 3
+    2300136: desk_swivel
+    2300138: desk_swivel 1
+    2300140: desk_swivel 2
+    2300142: desk_swivel 3
+    2300144: file_bucket
+    2300146: file_bucket 1
+    2300148: file_bucket 2
+    2300150: file_bucket 3
+    2300152: floor
+    2300154: floor_text10
+    2300156: floor_text2
+    2300158: floor_text3
+    2300160: floor_text4
+    2300162: floor_text5
+    2300164: floor_text7
+    2300166: floor_text8
+    2300168: floor_text9
+    2300170: Floor_Text_Main
+    2300172: keyboard
+    2300174: lamp_clamp
+    2300176: lamp_clamp 1
+    2300178: lamp_clamp 2
+    2300180: lamp_clamp 3
+    2300182: lamp_cube
+    2300184: lamp_dome
+    2300186: lamp_dome 1
+    2300188: lamp_dome 2
+    2300190: lamp_dome 3
+    2300192: lamp_joint
+    2300194: lamp_joint 1
+    2300196: lamp_joint 2
+    2300198: lamp_joint 3
+    2300200: lamp_spike_ball
+    2300202: legs
+    2300204: legs 1
+    2300206: legs 2
+    2300208: legs 3
+    2300210: lightbulb
+    2300212: monitor
+    2300214: pipe
+    2300216: plinth_base
+    2300218: plinth_base 1
+    2300220: plinth_base 2
+    2300222: plinth_surface
+    2300224: plinth_surface 1
+    2300226: plinth_surface 2
+    2300228: pPlane3
+    2300230: pyramid_base
+    2300232: pyramid_tip
+    2300234: red_cushion
+    2300236: rod
+    2300238: rug
+    2300240: shelving1
+    2300242: shelving2
+    2300244: table_bottom
+    2300246: table_bottom 1
+    2300248: table_guard1
+    2300250: table_guard2
+    2300252: table_leg1
+    2300254: table_main
+    2300256: table_support
+    2300258: table_support 1
+    2300260: table_support2
+    2300262: table_support2 1
+    2300264: table_top1
+    2300266: table_top1 1
+    2300268: teal_cushion
+    2300270: wheel1
+    2300272: wheel1 1
+    2300274: wheel1 2
+    2300276: wheel1 3
+    2300278: wheel1 4
+    2300280: wheel2
+    2300282: wheel2 1
+    2300284: wheel2 2
+    2300286: wheel2 3
+    2300288: wheel2 4
+    2300290: wheel3
+    2300292: wheel3 1
+    2300294: wheel3 2
+    2300296: wheel3 3
+    2300298: wheel3 4
+    2300300: wheel4
+    2300302: wheel4 1
+    2300304: wheel4 2
+    2300306: wheel4 3
+    2300308: wheel4 4
+    2300310: white_ring
+    2300312: window_frame
+    2300314: window_frame 1
+    2300316: window_supports
+    2300318: window_supports 1
+    2300320: window_wall1
+    2300322: window_wall2
+    2300324: window_wall3
+    3300000: arm1_joint
+    3300002: arm1_joint 1
+    3300004: arm1_joint 2
+    3300006: arm1_joint 3
+    3300008: arm1_support1
+    3300010: arm1_support1 1
+    3300012: arm1_support1 2
+    3300014: arm1_support1 3
+    3300016: arm1_support2
+    3300018: arm1_support2 1
+    3300020: arm1_support2 2
+    3300022: arm1_support2 3
+    3300024: arm2_joint
+    3300026: arm2_joint 1
+    3300028: arm2_joint 2
+    3300030: arm2_joint 3
+    3300032: arm2_supports
+    3300034: arm2_supports 1
+    3300036: arm2_supports 2
+    3300038: arm2_supports 3
+    3300040: black_ring
+    3300042: blue_cushion
+    3300044: cabinet
+    3300046: cabinet 1
+    3300048: cabinet 2
+    3300050: cabinet 3
+    3300052: chair_back
+    3300054: chair_back 1
+    3300056: chair_back 2
+    3300058: chair_back 3
+    3300060: chair_back 4
+    3300062: chair_frame
+    3300064: chair_frame 1
+    3300066: chair_frame 2
+    3300068: chair_frame 3
+    3300070: chair_frame 4
+    3300072: chair_seat
+    3300074: chair_seat 1
+    3300076: chair_seat 2
+    3300078: chair_seat 3
+    3300080: chair_seat 4
+    3300082: chair_support
+    3300084: chair_support 1
+    3300086: chair_support 2
+    3300088: chair_support 3
+    3300090: chair_support 4
+    3300092: clamp_key
+    3300094: clamp_key 1
+    3300096: clamp_key 2
+    3300098: clamp_key 3
+    3300100: couch_arm
+    3300102: couch_arm3
+    3300104: couch_arm_support
+    3300106: couch_arm_support1
+    3300108: couch_base
+    3300110: couch_stripe_box
+    3300112: couch_stripe_box1
+    3300114: couch_support1
+    3300116: couch_support2
+    3300118: desk_lamp_base
+    3300120: desk_lamp_head
+    3300122: desk_lamp_wire
+    3300124: desk_lamp_wire2
+    3300126: desk_lamp_wire3
+    3300128: desk_surface
+    3300130: desk_surface 1
+    3300132: desk_surface 2
+    3300134: desk_surface 3
+    3300136: desk_swivel
+    3300138: desk_swivel 1
+    3300140: desk_swivel 2
+    3300142: desk_swivel 3
+    3300144: file_bucket
+    3300146: file_bucket 1
+    3300148: file_bucket 2
+    3300150: file_bucket 3
+    3300152: floor
+    3300154: floor_text10
+    3300156: floor_text2
+    3300158: floor_text3
+    3300160: floor_text4
+    3300162: floor_text5
+    3300164: floor_text7
+    3300166: floor_text8
+    3300168: floor_text9
+    3300170: Floor_Text_Main
+    3300172: keyboard
+    3300174: lamp_clamp
+    3300176: lamp_clamp 1
+    3300178: lamp_clamp 2
+    3300180: lamp_clamp 3
+    3300182: lamp_cube
+    3300184: lamp_dome
+    3300186: lamp_dome 1
+    3300188: lamp_dome 2
+    3300190: lamp_dome 3
+    3300192: lamp_joint
+    3300194: lamp_joint 1
+    3300196: lamp_joint 2
+    3300198: lamp_joint 3
+    3300200: lamp_spike_ball
+    3300202: legs
+    3300204: legs 1
+    3300206: legs 2
+    3300208: legs 3
+    3300210: lightbulb
+    3300212: monitor
+    3300214: pipe
+    3300216: plinth_base
+    3300218: plinth_base 1
+    3300220: plinth_base 2
+    3300222: plinth_surface
+    3300224: plinth_surface 1
+    3300226: plinth_surface 2
+    3300228: pPlane3
+    3300230: pyramid_base
+    3300232: pyramid_tip
+    3300234: red_cushion
+    3300236: rod
+    3300238: rug
+    3300240: shelving1
+    3300242: shelving2
+    3300244: table_bottom
+    3300246: table_bottom 1
+    3300248: table_guard1
+    3300250: table_guard2
+    3300252: table_leg1
+    3300254: table_main
+    3300256: table_support
+    3300258: table_support 1
+    3300260: table_support2
+    3300262: table_support2 1
+    3300264: table_top1
+    3300266: table_top1 1
+    3300268: teal_cushion
+    3300270: wheel1
+    3300272: wheel1 1
+    3300274: wheel1 2
+    3300276: wheel1 3
+    3300278: wheel1 4
+    3300280: wheel2
+    3300282: wheel2 1
+    3300284: wheel2 2
+    3300286: wheel2 3
+    3300288: wheel2 4
+    3300290: wheel3
+    3300292: wheel3 1
+    3300294: wheel3 2
+    3300296: wheel3 3
+    3300298: wheel3 4
+    3300300: wheel4
+    3300302: wheel4 1
+    3300304: wheel4 2
+    3300306: wheel4 3
+    3300308: wheel4 4
+    3300310: white_ring
+    3300312: window_frame
+    3300314: window_frame 1
+    3300316: window_supports
+    3300318: window_supports 1
+    3300320: window_wall1
+    3300322: window_wall2
+    3300324: window_wall3
+    4300000: wheel4
+    4300002: wheel3
+    4300004: wheel2
+    4300006: wheel1
+    4300008: chair_support
+    4300010: chair_frame
+    4300012: chair_back
+    4300014: chair_seat
+    4300016: file_bucket
+    4300018: arm1_joint
+    4300020: arm1_support1
+    4300022: arm1_support2
+    4300024: arm2_joint
+    4300026: arm2_supports
+    4300028: lamp_joint
+    4300030: lamp_dome
+    4300032: clamp_key
+    4300034: lamp_clamp
+    4300036: cabinet
+    4300038: desk_surface
+    4300040: desk_swivel
+    4300042: legs
+    4300044: file_bucket
+    4300046: arm1_joint
+    4300048: arm1_support1
+    4300050: arm1_support2
+    4300052: arm2_joint
+    4300054: arm2_supports
+    4300056: lamp_joint
+    4300058: lamp_dome
+    4300060: clamp_key
+    4300062: lamp_clamp
+    4300064: cabinet
+    4300066: desk_surface
+    4300068: desk_swivel
+    4300070: legs
+    4300072: wheel4
+    4300074: wheel3
+    4300076: wheel2
+    4300078: wheel1
+    4300080: chair_support
+    4300082: chair_frame
+    4300084: chair_back
+    4300086: chair_seat
+    4300088: file_bucket
+    4300090: arm1_joint
+    4300092: arm1_support1
+    4300094: arm1_support2
+    4300096: arm2_joint
+    4300098: arm2_supports
+    4300100: lamp_joint
+    4300102: lamp_dome
+    4300104: clamp_key
+    4300106: lamp_clamp
+    4300108: cabinet
+    4300110: desk_surface
+    4300112: desk_swivel
+    4300114: legs
+    4300116: wheel4
+    4300118: wheel3
+    4300120: wheel2
+    4300122: wheel1
+    4300124: chair_support
+    4300126: chair_frame
+    4300128: chair_back
+    4300130: chair_seat
+    4300132: file_bucket
+    4300134: arm1_joint
+    4300136: arm1_support1
+    4300138: arm1_support2
+    4300140: arm2_joint
+    4300142: arm2_supports
+    4300144: lamp_joint
+    4300146: lamp_dome
+    4300148: clamp_key
+    4300150: lamp_clamp
+    4300152: cabinet
+    4300154: desk_surface
+    4300156: desk_swivel
+    4300158: legs
+    4300160: wheel4
+    4300162: wheel3
+    4300164: wheel2
+    4300166: wheel1
+    4300168: chair_support
+    4300170: chair_frame
+    4300172: chair_back
+    4300174: chair_seat
+    4300176: couch_arm
+    4300178: couch_arm_support
+    4300180: couch_stripe_box
+    4300182: red_cushion
+    4300184: couch_support2
+    4300186: couch_support1
+    4300188: couch_stripe_box1
+    4300190: couch_arm3
+    4300192: couch_arm_support1
+    4300194: couch_base
+    4300196: teal_cushion
+    4300198: blue_cushion
+    4300200: table_support2
+    4300202: table_bottom
+    4300204: table_support
+    4300206: table_top1
+    4300208: table_guard2
+    4300210: table_guard1
+    4300212: table_leg1
+    4300214: table_main
+    4300216: monitor
+    4300218: keyboard
+    4300220: lamp_spike_ball
+    4300222: lamp_cube
+    4300224: desk_lamp_wire2
+    4300226: desk_lamp_wire3
+    4300228: desk_lamp_wire
+    4300230: desk_lamp_head
+    4300232: desk_lamp_base
+    4300234: lightbulb
+    4300236: wheel4
+    4300238: wheel3
+    4300240: wheel2
+    4300242: wheel1
+    4300244: chair_support
+    4300246: chair_frame
+    4300248: chair_back
+    4300250: chair_seat
+    4300252: floor
+    4300254: window_wall1
+    4300256: pPlane3
+    4300258: rug
+    4300260: window_frame
+    4300262: window_supports
+    4300264: window_frame
+    4300266: window_supports
+    4300268: shelving1
+    4300270: shelving2
+    4300272: table_support2
+    4300274: table_bottom
+    4300276: table_support
+    4300278: table_top1
+    4300280: Floor_Text_Main
+    4300282: floor_text2
+    4300284: floor_text3
+    4300286: floor_text4
+    4300288: floor_text5
+    4300290: floor_text7
+    4300292: floor_text8
+    4300294: floor_text9
+    4300296: floor_text10
+    4300298: plinth_surface
+    4300300: plinth_base
+    4300302: black_ring
+    4300304: white_ring
+    4300306: plinth_surface
+    4300308: plinth_base
+    4300310: pyramid_tip
+    4300312: pyramid_base
+    4300314: plinth_surface
+    4300316: plinth_base
+    4300318: rod
+    4300320: pipe
+    4300322: window_wall2
+    4300324: window_wall3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
