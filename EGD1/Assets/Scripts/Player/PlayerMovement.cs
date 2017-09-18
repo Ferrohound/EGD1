@@ -25,7 +25,8 @@ public class PlayerMovement : MonoBehaviour {
 	float forwardMov;
 	float sideMov;
 	
-	float movSpeed = 1;
+	
+	float movSpeed = 4;
 	Rigidbody rb;
 
 	// Use this for initialization
@@ -35,8 +36,8 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		forwardMov = Input.GetAxis("Vertical");
-		sideMov = Input.GetAxis("Horizontal");
+		forwardMov = Input.GetAxis("Vertical") * movSpeed * Time.deltaTime;
+		sideMov = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
 		
 		//Debug.Log("forwardMove " + forwardMov);
 		//Debug.Log("sideMove " + sideMov);
@@ -44,9 +45,10 @@ public class PlayerMovement : MonoBehaviour {
 		//transform.position += (transform.forward * forwardMov * movSpeed)
 			//+ (transform.right * sideMov * movSpeed);
 		
-		//transform.position += transform.forward*forwardMov+transform.right*sideMov;
-		rb.AddForce(((transform.forward * forwardMov) + 
-			(transform.right * sideMov)) * movSpeed/Time.deltaTime);
+		//maybe apply acceleration later
+		transform.position += transform.forward*forwardMov+transform.right*sideMov;
+		//rb.AddForce(((transform.forward * forwardMov) + 
+			//(transform.right * sideMov)));
 		
 	}
 }

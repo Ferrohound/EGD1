@@ -112,9 +112,10 @@ public class PlayerController : MonoBehaviour {
 		//figure out whether there is an interactable in front of you
 		if(cam!=null && Physics.Raycast(cam.position, cam.forward, out rhit, 3.0f))
 		{
-			if (rhit.transform.GetComponent<GameItem>() != null)
+			if (rhit.transform.GetComponent<GameItem>() != null && 
+				!rhit.transform.GetComponent<GameItem>().held)
 			{
-				if (fDown && left == null)
+				if (fDown && left == null && rhit.transform != right)
 				{//pick up item
 						//turn off left holding UI element and on leftThrow
 					if(right!=null)
@@ -123,7 +124,7 @@ public class PlayerController : MonoBehaviour {
 					left = rhit.transform;
 					left.GetComponent<GameItem>().Interact(this, 1);//ignore collisions
                 } 
-				else if (f2Down && right == null)
+				else if (f2Down && right == null && rhit.transform!= left)
 				{//pick up item
 							//turn off right holding UI and on rightThrow
 					if(left != null)
@@ -147,7 +148,9 @@ public class PlayerController : MonoBehaviour {
 					}
                 }
             } 
-			else if ((fDown || f2Down) && rhit.transform.GetComponent<Interactable>() != null) 
+			else if ((fDown || f2Down) 
+				&& rhit.transform.GetComponent<GameItem>() == null
+				&& rhit.transform.GetComponent<Interactable>() != null) 
 			{
 				rhit.transform.GetComponent<Interactable>().Interact(this, 0); //default behaviour
 			}
