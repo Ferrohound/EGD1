@@ -12,6 +12,8 @@ public class GameItem : MonoBehaviour, Interactable {
     private List<Collider> cols;
 	public Transform target = null;
 	public float fusionSpeed = 3f;
+	
+	GameItem dad;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +41,7 @@ public class GameItem : MonoBehaviour, Interactable {
 	//Flag: 0 - drop item
 	//		1 - pickup left
 	//		2 - pickup right
+	//		3 - combine
 	public void Interact(PlayerController pc, int flag) {
 		switch (flag) { 
 			case 0:
@@ -58,70 +61,88 @@ public class GameItem : MonoBehaviour, Interactable {
 			break;
 			
 			case 1:
-				rb.isKinematic = true;
-				
-				for(int i = 0; i<cols.Count; i++)
-				{
-					Physics.IgnoreCollision(cols[i], pc.col, true);
-				}
-				
-				Debug.Log("This transform's parent is...-!");
-				Debug.Log(transform.parent);
-				
-				//hold the parent object
-				if(transform.parent == null)
-				{
-					transform.SetParent(pc.LeftHand);
-					transform.localPosition = Vector3.zero;
-					held = true; 
-				}
-				else
-				{
-					Transform t = transform;
-					//set all of the held items' held to true
-					held = true;
-					while(t.parent!=null)
+				if(dad != null)
+					dad.Interact(pc, flag);
+					
+					else 
 					{
-						t = t.parent;
-						t.GetComponent<GameItem>().held = true;
+					rb.isKinematic = true;
+					
+					for(int i = 0; i<cols.Count; i++)
+					{
+						Physics.IgnoreCollision(cols[i], pc.col, true);
 					}
 					
-					t.SetParent(pc.LeftHand);
-					t.localPosition = Vector3.zero;
-					t.GetComponent<GameItem>().held = true;
+					Debug.Log("This transform's parent is...-!");
+					Debug.Log(transform.parent);
+					
+					//hold the parent object
+					if(transform.parent == null)
+					{
+						transform.SetParent(pc.LeftHand);
+						transform.localPosition = Vector3.zero;
+						held = true; 
+						pc.left = transform;
+					}
+					else
+					{
+						Transform t = transform;
+						//set all of the held items' held to true
+						held = true;
+						while(t.parent!=null)
+						{
+							t = t.parent;
+							t.GetComponent<GameItem>().held = true;
+						}
+						t.GetComponent<GameItem>().rb.isKinematic = true;
+						t.SetParent(pc.LeftHand);
+						t.localPosition = Vector3.zero;
+						t.GetComponent<GameItem>().held = true;
+						pc.left = t;
+					}
 				}
 			break;
 			
 			case 2:
-				rb.isKinematic = true;
+				if(dad != null)
+					dad.Interact(pc, flag);
 				
-				for(int i = 0; i<cols.Count; i++)
-				{
-					Physics.IgnoreCollision(cols[i], pc.col, true);
-				}
-				
-				//hold the parent object
-				
-				Debug.Log("This transform's parent is...-!");
-				Debug.Log(transform.parent);
-				
-				if(transform.parent == null)
-				{
-					transform.SetParent(pc.RightHand);
-					transform.localPosition = Vector3.zero;
-					held = true; 
-				}
 				else
 				{
-					Transform t = transform;
-					while(t.parent!=null)
+					rb.isKinematic = true;
+					
+					for(int i = 0; i<cols.Count; i++)
 					{
-						t = t.parent;
+						Physics.IgnoreCollision(cols[i], pc.col, true);
 					}
 					
-					t.SetParent(pc.RightHand);
-					t.localPosition = Vector3.zero;
-					t.GetComponent<GameItem>().held = true;
+					//hold the parent object
+					
+					Debug.Log("This transform's parent is...-!");
+					Debug.Log(transform.parent);
+					
+					if(transform.parent == null)
+					{
+						transform.SetParent(pc.RightHand);
+						transform.localPosition = Vector3.zero;
+						held = true; 
+						pc.right = transform;
+					}
+					else
+					{
+						Transform t = transform;
+						while(t.parent!=null)
+						{
+							t = t.parent;
+							t.GetComponent<GameItem>().held = true;
+						}
+						
+						t.GetComponent<GameItem>().rb.isKinematic = true;
+						t.SetParent(pc.RightHand);
+						t.localPosition = Vector3.zero;
+						t.GetComponent<GameItem>().held = true;
+						pc.right = t;
+					}
 				}
 				
 			break;
@@ -151,7 +172,16 @@ public class GameItem : MonoBehaviour, Interactable {
 		
 		if(transform.parent == null)
 		{
+			for(int i = 0; i<cols.Count; i++)
+			{
+				for(int j = 0; j<other.cols.Count; j++)
+				{
+					Physics.IgnoreCollision(cols[i], other.cols[j], true);
+				}
+			}
+			
 			transform.SetParent(other.transform);
+			dad = other;
 			rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY
 				| RigidbodyConstraints.FreezePositionZ;
 		}
