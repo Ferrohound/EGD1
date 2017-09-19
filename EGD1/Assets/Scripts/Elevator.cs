@@ -27,5 +27,7 @@ public class Elevator : MonoBehaviour {
 		//when the player enters, shut the doors, asynchronously load the next level
 		//then unload the current one
 		//open the doors back up
+		
+		SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive);
 	}
 }

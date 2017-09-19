@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Fuq.unity
+    guid: ed5ad366201ed1946b8c43baca1986a3
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 3807c3711fad3ec4ca1c2da0d80dc507
