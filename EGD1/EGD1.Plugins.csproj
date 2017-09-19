@@ -5,16 +5,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{30B91352-94D8-C7AE-6CD1-0C71F5A63E25}</ProjectGuid>
+    <ProjectGuid>{D41F554E-2928-B6CD-3971-0EE2DDEF99B7}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.1f1</UnityVersion>
     <RootNamespace></RootNamespace>
@@ -84,19 +84,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="EGD1.Plugins.csproj">
-      <Project>{D41F554E-2928-B6CD-3971-0EE2DDEF99B7}</Project>
-      <Name>EGD1.Plugins</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\Scripts\Camera\FirstPersonCamera.cs" />
-    <Compile Include="Assets\Scripts\Camera\Popup.cs" />
-    <Compile Include="Assets\Scripts\Elevator.cs" />
-    <Compile Include="Assets\Scripts\Item\GameItem.cs" />
-    <Compile Include="Assets\Scripts\Item\Interactible.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\AmbientOcclusion\AmbientOcclusion.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\AmbientOcclusion\Helpers\PropertyObserver.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\AmbientOcclusion\Helpers\Settings.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\AntiAliasing\AntiAliasing.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\AntiAliasing\FXAA\FXAA.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\AntiAliasing\IAntiAliasing.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\AntiAliasing\SMAA\SMAA.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\Bloom\Bloom.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\Common\ImageEffectHelper.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\Common\MinAttribute.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\Common\RenderTextureUtility.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\DepthOfField\DepthOfField.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\LensAberrations\LensAberrations.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\MotionBlur\Helpers\FrameBlendingFilter.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\MotionBlur\Helpers\ReconstructionFilter.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\MotionBlur\Helpers\Settings.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\MotionBlur\MotionBlur.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\ScreenSpaceReflection\ScreenSpaceReflection.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\TemporalAntiAliasing\TemporalAntiAliasing.cs" />
+    <Compile Include="Assets\Standard Assets\Effects\TonemappingColorGrading\TonemappingColorGrading.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\STDCharacterShader.shader" />
