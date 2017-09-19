@@ -111,12 +111,11 @@ public class PlayerController : MonoBehaviour {
 		
 		if (left != null && fDown && negateLeft) 
 		{//Left throw is being charged
-			negateLeft = !negateLeft;
 			callFlag = 0;
         } 
+		
 		if(right != null && f2Down && negateRight) 
 		{ //WILL HAVE TO CHANGE
-			negateRight = !negateRight;
 			callFlag = 1;
 		}
 		
@@ -124,8 +123,9 @@ public class PlayerController : MonoBehaviour {
 		if(right!=null && left!=null && action)
 		{
 			combining = true;
-			left.GetComponent<GameItem>().Interact(this, 3);
+			
 			right.GetComponent<GameItem>().Interact(this, 3);
+			left.GetComponent<GameItem>().Interact(this, 3);
 		}
 		
 		//figure out whether there is an interactable in front of you
@@ -189,10 +189,12 @@ public class PlayerController : MonoBehaviour {
             case 0:
                 Throw(true);
                 callFlag = -1;
+				negateLeft = !negateLeft;
                 break;
             case 1:
                 Throw(false);
                 callFlag = -1;
+				negateRight = !negateRight;
                 break;
             default: break;
         }

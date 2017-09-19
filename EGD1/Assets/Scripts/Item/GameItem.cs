@@ -90,6 +90,8 @@ public class GameItem : MonoBehaviour, Interactable {
 					else
 					{
 						Transform t = transform;
+						if(t.parent == pc.RightHand || t.parent == pc.LeftHand)
+							return;
 						//set all of the held items' held to true
 						held = true;
 						while(t.parent!=null)
