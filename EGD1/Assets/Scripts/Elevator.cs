@@ -8,6 +8,10 @@ public class Elevator : MonoBehaviour {
 	//which floor to load and which to unload (current)
 	public string LoadFloor;
 	public string CurrentFloor;
+	public Popup popup;
+	
+	//take ~5 seconds to complete the scene change
+	//open doors and display popup
 
 	// Use this for initialization
 	void Start () {
@@ -29,5 +33,12 @@ public class Elevator : MonoBehaviour {
 		//open the doors back up
 		
 		SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive);
+		//SceneManager.UnloadSceneAsync(CurrentFloor);
+	}
+	
+	void execute(string text)
+	{
+		popup.setText(text);
+		popup.ShowPopup();
 	}
 }

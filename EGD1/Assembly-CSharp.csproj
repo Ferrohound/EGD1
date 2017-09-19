@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera\FirstPersonCamera.cs" />
+     <Compile Include="Assets\Scripts\Camera\Popup.cs" />
      <Compile Include="Assets\Scripts\Elevator.cs" />
      <Compile Include="Assets\Scripts\Item\GameItem.cs" />
      <Compile Include="Assets\Scripts\Item\Interactible.cs" />

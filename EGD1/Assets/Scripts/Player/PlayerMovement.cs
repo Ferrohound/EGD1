@@ -37,6 +37,11 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		forwardMov = Input.GetAxis("Vertical") * movSpeed * Time.deltaTime;
+		//prevent player from moving forwards
+		if(backwards && forwardMov>0)
+		{
+			forwardMov = 0;
+		}
 		sideMov = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
 		
 		//Debug.Log("forwardMove " + forwardMov);
@@ -49,6 +54,12 @@ public class PlayerMovement : MonoBehaviour {
 		transform.position += transform.forward*forwardMov+transform.right*sideMov;
 		//rb.AddForce(((transform.forward * forwardMov) + 
 			//(transform.right * sideMov)));
+		
+		//we're constantly moving backwards through time
+		if(backwards)
+		{
+			transform.position -= (transform.forward * (movSpeed/4) * Time.deltaTime);
+		}
 		
 	}
 }
