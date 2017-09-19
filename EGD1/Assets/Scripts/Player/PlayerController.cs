@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour {
 	//transforms for left and right hands
 	public Transform leftT, rightT, left, right;
 	
+	public float turnSpeed = 200f;
+	
 	//bool if both hands are in use
 	public bool bothHands = false;
 	public bool combining = false;
@@ -74,7 +76,7 @@ public class PlayerController : MonoBehaviour {
 				negateRight = !negateRight;
 				right = null;
 			}
-			Debug.Log("Not combining right now!");
+			//Debug.Log("Not combining right now!");
 			combining = false;
 		}
 		
@@ -96,6 +98,15 @@ public class PlayerController : MonoBehaviour {
 		fUp = Input.GetButtonUp("Fire1");
 		f2Up = Input.GetButtonUp("Fire2");
 		action = Input.GetKeyDown("space");
+		
+		float turn = turnSpeed * Input.GetAxis("Mouse ScrollWheel"); //* Time.deltaTime;
+		turn *= turnSpeed;
+		Debug.Log(turn);
+		
+		if(left!=null)
+		{
+			left.Rotate(Vector3.up * turn);
+		}
 		
 		
 		if (left != null && fDown && negateLeft) 
@@ -166,7 +177,7 @@ public class PlayerController : MonoBehaviour {
 			}
 			else
 			{
-				Debug.Log("Nothing there.");
+				//Debug.Log("Nothing there.");
 			}
 		}
 	}

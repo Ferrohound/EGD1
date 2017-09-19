@@ -42,6 +42,9 @@ public class GameItem : MonoBehaviour, Interactable {
 	//		1 - pickup left
 	//		2 - pickup right
 	//		3 - combine
+	//		4 - separate
+	
+	//worry about moving all of its children to its parent later
 	public void Interact(PlayerController pc, int flag) {
 		switch (flag) { 
 			case 0:
