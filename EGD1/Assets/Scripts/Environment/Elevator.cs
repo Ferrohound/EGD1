@@ -55,6 +55,7 @@ public class Elevator : MonoBehaviour {
 	//open the door and flash popup
 	public void openFrontDoors()
 	{
+		Debug.Log("Opening front");
 		frontDoors[0].open = true;
 		frontDoors[1].open = true;
 	}
@@ -70,6 +71,7 @@ public class Elevator : MonoBehaviour {
 	
 	public void openBackDoors()
 	{
+		Debug.Log("Opening back");
 		backDoors[0].open = true;
 		backDoors[1].open = true;
 		//execute(LoadFloor);
@@ -95,17 +97,23 @@ public class Elevator : MonoBehaviour {
 			transform.position = Vector3.Lerp(start, target.position, currentTime/rideTime);
 			transform.rotation = Quaternion.Lerp(sR, target.rotation, currentTime/rideTime);
 			player.transform.position = transform.position;
-			player.transform.rotation = playerLocal * transform.rotation;
+			player.transform.localRotation = playerLocal;
 			currentTime+=Time.deltaTime;
 			yield return null;
 		}
 		
 		start = transform.position;
 		
+		//because HOLY FUCK.
+		Transform totem = GameObject.Find("Totem").transform;
+		player.transform.LookAt(totem);
+		Destroy(totem.gameObject);
+		
+		
 		//execute(LoadFloor);
 		//open the door back up
-		//openDoors2();
-		openFrontDoors();
+		//openFrontDoors();
+		openBackDoors();
 	}
 	
 	void execute(string text)
