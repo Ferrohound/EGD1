@@ -8,7 +8,7 @@ public class fade : MonoBehaviour {
 	float fadeSpeed = 0.1f;
 	int drawDepth = -1000;
  
-	float alpha = 1.0f; 
+	public float alpha = 1.0f; 
 	public int fadeDir = -1;
  
 	void OnGUI(){

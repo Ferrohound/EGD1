@@ -46,6 +46,7 @@ public class Elevator : MonoBehaviour {
 		//when the player enters, shut the doors, asynchronously load the next level
 		//then unload the current one
 		player = col.gameObject;
+		
 		SceneManager.LoadSceneAsync(LoadFloor, LoadSceneMode.Additive);
 		if(light!=null)
 			Destroy(light.gameObject);

@@ -32,7 +32,7 @@ public class Door : MonoBehaviour {
 	{
 		float step = closeSpeed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-		if(Vector3.Distance(transform.position, target.position) < 0.01)
+		if(Vector3.Distance(transform.position, target.position) < 0.001)
 			close = false;
 	}
 	
@@ -40,7 +40,7 @@ public class Door : MonoBehaviour {
 	{
 		float step = closeSpeed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards(transform.position, openTarget.position, step);
-		if(Vector3.Distance(transform.position, openTarget.position)<0.01)
+		if(Vector3.Distance(transform.position, openTarget.position)<0.001)
 			open = false;
 	}
 	
