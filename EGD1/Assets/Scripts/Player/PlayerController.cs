@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 	
+	public fade f;
+	
 	//persistant player
 	public static PlayerController Instance;
 	
@@ -236,12 +238,16 @@ public class PlayerController : MonoBehaviour {
 		//1.5 for now since i don't think we'll need to charge the throw for this one
         if (side) 
 		{ 
+			if(left == null)
+				return;
             left.GetComponent<Rigidbody>().velocity = cam.forward.normalized * 1.5f + Velocity;
             left.GetComponent<GameItem>().Interact(this, 0);
             left = null;
         } 
 		else 
 		{
+			if(right == null)
+				return;
             right.GetComponent<Rigidbody>().velocity = cam.forward.normalized * 1.5f + Velocity;
             right.GetComponent<GameItem>().Interact(this, 0);
             right = null;
@@ -263,5 +269,32 @@ public class PlayerController : MonoBehaviour {
 		}
 		yield return null;
 
+	}
+	
+	//0 - place left
+	//1 - place right
+	public void Place(int f, Transform t)
+	{	
+		Transform tmp;
+		if(f == 0)
+		{
+			tmp = left;
+			left.GetComponent<Rigidbody>().velocity = cam.forward.normalized * 1.5f + Velocity;
+            left.GetComponent<GameItem>().Interact(this, 0);
+            left = null;
+			callFlag = 0;
+		}
+		else
+		{
+			tmp = right;
+			right.GetComponent<Rigidbody>().velocity = cam.forward.normalized * 1.5f + Velocity;
+            right.GetComponent<GameItem>().Interact(this, 0);
+            right = null;
+			callFlag = 1;
+		}
+		
+		tmp.SetParent(t);
+		tmp.localPosition = Vector3.zero;
+		
 	}
 }
