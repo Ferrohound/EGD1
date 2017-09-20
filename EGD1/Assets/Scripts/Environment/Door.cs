@@ -5,9 +5,11 @@ using UnityEngine;
 public class Door : MonoBehaviour {
 	
 	public Transform target;
+	public Transform openTarget;
 	public float closeSpeed;
 	public bool move;
 	public bool open = false;
+	public bool close = false;
 
 	// Use this for initialization
 	void Start () {
@@ -16,11 +18,30 @@ public class Door : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(target!=null && move)
+		if(target!=null && open)
 		{
-			float step = closeSpeed * Time.deltaTime;
-			transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+			Open();
 		}
+		else if (openTarget!=null && close)
+		{
+			Close();
+		}
+	}
+	
+	void Close()
+	{
+		float step = closeSpeed * Time.deltaTime;
+		transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+		if(Vector3.Distance(transform.position, target.position) < 0.1)
+			close = false;
+	}
+	
+	void Open()
+	{
+		float step = closeSpeed * Time.deltaTime;
+		transform.position = Vector3.MoveTowards(transform.position, openTarget.position, step);
+		if(Vector3.Distance(transform.position, openTarget.position)<0.1)
+			open = false;
 	}
 	
 	void OnTriggerEnter(Collider col)
@@ -28,6 +49,6 @@ public class Door : MonoBehaviour {
 		if(col.tag!="Door")
 			return;
 		
-		move = false;
+		close = false;
 	}
 }

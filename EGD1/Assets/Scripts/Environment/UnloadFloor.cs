@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class UnloadFloor : MonoBehaviour {
 	
 	public string Unload;
+	public GameObject E;
 	public Elevator elevator;
 
 	// Use this for initialization
 	void Start () {
-		
+		E = elevator.gameObject;
 	}
 	
 	// Update is called once per frame
@@ -26,7 +27,7 @@ public class UnloadFloor : MonoBehaviour {
 			return;
 		
 		SceneManager.UnloadSceneAsync(Unload);
-		
-		elevator.closeDoors();
+		E.SetActive(true);
+		elevator.closeBackDoors();
 	}
 }

@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour {
 		
 		float turn = turnSpeed * Input.GetAxis("Mouse ScrollWheel"); //* Time.deltaTime;
 		turn *= turnSpeed;
-		Debug.Log(turn);
+		//Debug.Log(turn);
 		
 		if(left!=null)
 		{
