@@ -7,6 +7,7 @@ public class Door : MonoBehaviour {
 	public Transform target;
 	public float closeSpeed;
 	public bool move;
+	public bool open = false;
 
 	// Use this for initialization
 	void Start () {

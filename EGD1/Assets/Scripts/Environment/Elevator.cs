@@ -8,10 +8,11 @@ public class Elevator : MonoBehaviour {
 	//which floor to load and which to unload (current)
 	[Tooltip("Floor to load")]
 	public string LoadFloor;
+
 	public Popup popup;
 	
 	//where the elevator is actually moving to
-	public Vector3 target;
+	public Transform target;
 	public Vector3 start;
 	
 	public float moveSpeed;
@@ -26,11 +27,6 @@ public class Elevator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		start = transform.position;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 	
 	//the trigger for the elevator is ~halfway in
@@ -50,14 +46,14 @@ public class Elevator : MonoBehaviour {
 	}
 	
 	//open the door and flash popup
-	void openDoors()
+	public void openDoors()
 	{
 		backDoors[0].move = true;
 		backDoors[1].move = true;
 		execute(LoadFloor);
 	}
 	
-	void closeDoors()
+	public void closeDoors()
 	{
 		frontDoors[0].move = true;
 		frontDoors[1].move = true;
@@ -71,7 +67,7 @@ public class Elevator : MonoBehaviour {
 		while(currentTime < rideTime)
 		{
 			
-			transform.position = Vector3.Lerp(start, target, currentTime/rideTime);
+			transform.position = Vector3.Lerp(start, target.position, currentTime/rideTime);
 			currentTime+=Time.deltaTime;
 			yield return null;
 		}
