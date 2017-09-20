@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 	
+	//persistant player
+	public static PlayerController Instance;
+	
 	//transforms for left and right hands
 	public Transform leftT, rightT, left, right;
 	
@@ -43,6 +46,16 @@ public class PlayerController : MonoBehaviour {
 	public Transform LeftHand
 	{
 		get { return leftT; }
+	}
+	
+	//persistant player, don't destroy this object on load
+	void Awake(){
+		if(Instance == null){
+			DontDestroyOnLoad (gameObject);
+			Instance = this;
+		} else if(Instance!=this) {
+			Destroy(gameObject);
+		}
 	}
 	
 	
