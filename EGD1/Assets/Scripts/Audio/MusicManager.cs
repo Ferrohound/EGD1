@@ -14,6 +14,7 @@ public class MusicManager : MonoBehaviour {
         {
             sources[i] = gameObject.AddComponent<AudioSource>();
             sources[i].clip = stems[i].clip;
+            sources[i].loop = true;
         }
 	}
 
