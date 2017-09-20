@@ -9,6 +9,9 @@ public class UnloadFloor : MonoBehaviour {
 	public GameObject E;
 	public Elevator elevator;
 	public Transform exit;
+	
+	public Popup popup;
+	public string floorName;
 
 	// Use this for initialization
 	void Start () {
@@ -31,5 +34,8 @@ public class UnloadFloor : MonoBehaviour {
 		E.SetActive(true);
 		elevator.closeBackDoors();
 		col.transform.GetComponent<PlayerMovement>().target = exit;
+		
+		popup.setText(floorName);
+		popup.ShowPopup();
 	}
 }

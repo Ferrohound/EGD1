@@ -5,28 +5,25 @@ using UnityEngine.UI;
 
 public class Popup : MonoBehaviour {
 	
-	public Canvas canvas;
-	GameObject popup;
+	public Animator anim;
+	public Text words;
+	public bool playOnStart = false;
 
 	// Use this for initialization
 	void Start () {
-		if(canvas.transform.Find("Popup")!=null)
+		if(playOnStart)
 		{
-			popup = canvas.transform.Find("Popup").gameObject;
+			ShowPopup();
 		}
 	}
 	
 	// Update is called once per frame
 	public void ShowPopup () {
-		Debug.Log(popup);
-		popup.GetComponent<Animator>().Play("Popup");
+		anim.Play("Popup");
 	}
 	
 	public void setText(string text)
 	{
-		if (popup == null)
-			popup = canvas.transform.Find("Popup").gameObject;
-		
-		popup.transform.Find("[popupText]").gameObject.GetComponent<Text>().text = text;
+		words.text = text;
 	}
 }
