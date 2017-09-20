@@ -4248,6 +4248,7 @@ MonoBehaviour:
   Unload: Lobby
   E: {fileID: 152881628}
   elevator: {fileID: 152881611}
+  exit: {fileID: 1118292040}
 --- !u!4 &2107093256
 Transform:
   m_ObjectHideFlags: 0

@@ -46,7 +46,7 @@ public class Elevator : MonoBehaviour {
 		player = col.gameObject;
 		SceneManager.LoadSceneAsync(LoadFloor, LoadSceneMode.Additive);
 		Destroy(light.gameObject);
-		
+		player.GetComponent<PlayerMovement>().target = null;
 		//elevator starts to move
 		StartCoroutine(Move());
 		//SceneManager.UnloadSceneAsync(CurrentFloor);

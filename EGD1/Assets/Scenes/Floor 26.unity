@@ -3241,6 +3241,7 @@ MonoBehaviour:
   Unload: Floor 11
   E: {fileID: 828455897}
   elevator: {fileID: 828455884}
+  exit: {fileID: 1402461414}
 --- !u!4 &2107093256
 Transform:
   m_ObjectHideFlags: 0

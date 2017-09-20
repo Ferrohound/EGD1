@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	//boolean for moving backwards
 	public bool backwards = false;
+	public Transform target;
 	
 	//button movement
 	float forwardMov;
@@ -44,6 +45,8 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		sideMov = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
 		
+		float step = (movSpeed/4) * Time.deltaTime;
+		
 		//Debug.Log("forwardMove " + forwardMov);
 		//Debug.Log("sideMove " + sideMov);
 		
@@ -58,7 +61,12 @@ public class PlayerMovement : MonoBehaviour {
 		//we're constantly moving backwards through time
 		if(backwards)
 		{
-			transform.position -= (transform.forward * (movSpeed/4) * Time.deltaTime);
+			//transform.position -= (transform.forward * (movSpeed/4) * Time.deltaTime);
+			if(target == null)
+				transform.position -= (transform.forward * (movSpeed/4) * Time.deltaTime);
+			else
+				transform.position = Vector3.MoveTowards(transform.position, target.position,
+				step);
 		}
 		
 	}

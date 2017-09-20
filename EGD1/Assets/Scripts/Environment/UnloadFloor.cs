@@ -8,6 +8,7 @@ public class UnloadFloor : MonoBehaviour {
 	public string Unload;
 	public GameObject E;
 	public Elevator elevator;
+	public Transform exit;
 
 	// Use this for initialization
 	void Start () {
@@ -29,5 +30,6 @@ public class UnloadFloor : MonoBehaviour {
 		SceneManager.UnloadSceneAsync(Unload);
 		E.SetActive(true);
 		elevator.closeBackDoors();
+		col.transform.GetComponent<PlayerMovement>().target = exit;
 	}
 }

@@ -12,6 +12,5 @@ public class WalkingTrigger : MonoBehaviour {
 		col.GetComponent<PlayerMovement>().backwards = 
 			!col.GetComponent<PlayerMovement>().backwards;
 			
-		Destroy(gameObject);
 	}
 }
