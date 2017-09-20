@@ -17,7 +17,35 @@ public class MusicManager : MonoBehaviour {
         }
 	}
 
+    private void Update()
+    {
+        if (Input.GetKeyDown("z"))
+        {
+            fadeIn(0, 3f);
+        }
+        if (Input.GetKeyDown("c"))
+        {
+            play(0);
+        }
+        if (Input.GetKeyDown("v"))
+        {
+            stop(0);
+        }
+        if (Input.GetKeyDown("x"))
+        {
+            fadeOut(0, 3f);
+        }
+
+
+    }
+
     public void play(int stem)
+    {
+        sources[stem].volume = 1f;
+        playHelper(stem);
+    }
+
+    private void playHelper(int stem)
     {
         bool firstStem = true;
         int playingStem = -1;
@@ -32,12 +60,10 @@ public class MusicManager : MonoBehaviour {
         }
         if (firstStem)
         {
-            sources[stem].volume = 1f;
             sources[stem].Play();
         } else
         {
             sources[stem].timeSamples = sources[playingStem].timeSamples;
-            sources[stem].volume = 1f;
             sources[stem].Play();
         }
     }
@@ -50,6 +76,8 @@ public class MusicManager : MonoBehaviour {
 
     public void fadeIn(int stem, float fadeLength)
     {
+        sources[stem].volume = 0;
+        playHelper(stem);
         StartCoroutine(Fade(sources[stem], 1f, fadeLength));
     }
 

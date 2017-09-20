@@ -17,7 +17,7 @@ public class AudioTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!triggered)
+        if (!triggered && other.gameObject.name.Equals("Player"))
         {
             foreach (AudioCommand command in commands)
             {

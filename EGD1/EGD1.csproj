@@ -90,9 +90,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Audio\AudioTrigger.cs" />
+    <Compile Include="Assets\Scripts\Audio\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Camera\FirstPersonCamera.cs" />
     <Compile Include="Assets\Scripts\Camera\Popup.cs" />
-    <Compile Include="Assets\Scripts\Elevator.cs" />
+    <Compile Include="Assets\Scripts\Environment\Door.cs" />
+    <Compile Include="Assets\Scripts\Environment\Elevator.cs" />
+    <Compile Include="Assets\Scripts\Environment\Podium.cs" />
+    <Compile Include="Assets\Scripts\Environment\UnloadFloor.cs" />
+    <Compile Include="Assets\Scripts\Environment\WalkingTrigger.cs" />
     <Compile Include="Assets\Scripts\Item\GameItem.cs" />
     <Compile Include="Assets\Scripts\Item\Interactible.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
