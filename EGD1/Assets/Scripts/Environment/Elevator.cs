@@ -27,6 +27,8 @@ public class Elevator : MonoBehaviour {
 	public Door[] frontDoors;
 	public Door[] backDoors;
 	
+	public Transform center, front, back;
+	
 	//take ~5 seconds to complete the scene change
 	//open doors and display popup
 
@@ -45,7 +47,8 @@ public class Elevator : MonoBehaviour {
 		//then unload the current one
 		player = col.gameObject;
 		SceneManager.LoadSceneAsync(LoadFloor, LoadSceneMode.Additive);
-		Destroy(light.gameObject);
+		if(light!=null)
+			Destroy(light.gameObject);
 		player.GetComponent<PlayerMovement>().target = null;
 		//elevator starts to move
 		StartCoroutine(Move());
@@ -88,13 +91,23 @@ public class Elevator : MonoBehaviour {
 		float currentTime = 0;
 		sR = transform.rotation;
 		Quaternion playerLocal = player.transform.localRotation;
+		Vector3 lookPos;
+		Quaternion rotation;
 		while(currentTime < rideTime)
 		{
 			
 			transform.position = Vector3.Lerp(start, target.position, currentTime/rideTime);
 			transform.rotation = Quaternion.Lerp(sR, target.rotation, currentTime/rideTime);
-			player.transform.position = transform.position;
-			player.transform.localRotation = playerLocal;
+			if(center!=null)
+				player.transform.position = center.position;
+			if(front!=null)
+			{
+				lookPos = front.position - player.transform.position;
+				lookPos.y = 0;
+				rotation = Quaternion.LookRotation(lookPos);
+				//player.transform.LookAt(front);
+				player.transform.rotation = rotation;
+			}
 			currentTime+=Time.deltaTime;
 			yield return null;
 		}
@@ -103,7 +116,12 @@ public class Elevator : MonoBehaviour {
 		
 		//because HOLY FUCK.
 		Transform totem = GameObject.Find("Totem").transform;
-		player.transform.LookAt(totem);
+		lookPos = totem.position - player.transform.position;
+		lookPos.y = 0;
+		rotation = Quaternion.LookRotation(lookPos);
+		//player.transform.LookAt(front);
+		player.transform.rotation = rotation;
+		//player.transform.LookAt(totem);
 		Destroy(totem.gameObject);
 		
 		

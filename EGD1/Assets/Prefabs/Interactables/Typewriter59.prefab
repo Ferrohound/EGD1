@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 65784235584232344}
   - component: {fileID: 65023246740769636}
   - component: {fileID: 114303632307063722}
+  - component: {fileID: 114323404020965566}
   m_Layer: 0
   m_Name: Typewriter59
   m_TagString: Untagged
@@ -158,3 +159,16 @@ MonoBehaviour:
   held: 0
   target: {fileID: 0}
   fusionSpeed: 3
+--- !u!114 &114323404020965566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1550837743592198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b56a0fe7f968b644b4c3600bad7461c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlowColor: {r: 0.31617647, g: 0.97170377, b: 1, a: 0}
+  LerpFactor: 10

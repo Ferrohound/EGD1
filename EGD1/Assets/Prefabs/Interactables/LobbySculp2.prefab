@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114520586975456930}
   - component: {fileID: 136636313068144468}
   - component: {fileID: 136071046269402702}
+  - component: {fileID: 114087043370705444}
   m_Layer: 0
   m_Name: LobbySculp2
   m_TagString: Untagged
@@ -120,6 +121,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114087043370705444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849229981800524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b56a0fe7f968b644b4c3600bad7461c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlowColor: {r: 0.31617647, g: 0.97170377, b: 1, a: 0}
+  LerpFactor: 10
 --- !u!114 &114520586975456930
 MonoBehaviour:
   m_ObjectHideFlags: 1
