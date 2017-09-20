@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		sideMov = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
 		
-		float step = (movSpeed/4) * Time.deltaTime;
+		float step = (movSpeed/8) * Time.deltaTime;
 		
 		//Debug.Log("forwardMove " + forwardMov);
 		//Debug.Log("sideMove " + sideMov);

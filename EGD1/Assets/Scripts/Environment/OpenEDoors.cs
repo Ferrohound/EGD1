@@ -21,8 +21,6 @@ public class OpenEDoors : MonoBehaviour {
 		if(col.tag!="Player")
 			return;
 		
-		Debug.Log("Open the doors!");
-		
 		e.openFrontDoors();
 		Destroy(this);
 		

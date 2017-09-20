@@ -55,14 +55,12 @@ public class Elevator : MonoBehaviour {
 	//open the door and flash popup
 	public void openFrontDoors()
 	{
-		Debug.Log("Opening front");
 		frontDoors[0].open = true;
 		frontDoors[1].open = true;
 	}
 	
 	public void closeFrontDoors()
 	{	
-		Debug.Log("Closing front doors");
 		frontDoors[0].close = true;
 		frontDoors[1].close = true;
 		//riding = true;
@@ -71,7 +69,6 @@ public class Elevator : MonoBehaviour {
 	
 	public void openBackDoors()
 	{
-		Debug.Log("Opening back");
 		backDoors[0].open = true;
 		backDoors[1].open = true;
 		//execute(LoadFloor);
