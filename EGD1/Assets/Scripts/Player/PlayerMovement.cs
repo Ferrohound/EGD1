@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour {
 	float sideMov;
 	
 	
-	float movSpeed = 4;
+	public float movSpeed = 1;
 	Rigidbody rb;
 
 	// Use this for initialization
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		sideMov = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
 		
-		float step = (movSpeed/8) * Time.deltaTime;
+		float step = (movSpeed/2) * Time.deltaTime;
 		
 		//Debug.Log("forwardMove " + forwardMov);
 		//Debug.Log("sideMove " + sideMov);

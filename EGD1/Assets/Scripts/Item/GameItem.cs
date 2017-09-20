@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(ItemGlow))]
 [System.Serializable]
 public class GameItem : MonoBehaviour, Interactable {
 	
